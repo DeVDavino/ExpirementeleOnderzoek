@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src ="js/selectionRoom.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </head>
+  
+  <body>
+    <a-scene>
+      
+      <!-- Cursor -->
+      <!-- Cursor -->
+      <a-camera  position="0 2 2"  wasd-controls="acceleration:100">
+        <a-cursor  color="#39ff14"></a-cursor>
+      </a-camera>
+    
+
+      <a-assets>
+
+        
+        <img id = "CeilingTexture" src= "/assets/CeillingTexture.jpg"/>
+        <img id = "WoodCeiling" src= "/assets/Wood_Ceiling_Coffers_002_basecolor.jpg"/>
+        <img id = "RoomTexture" src= "/assets/WallTexture.jpg"/>
+        <img id = "FloorTexture" src= "/assets/WoodFloor.jpg"/>
+
+        <img id = "greyFloor" src= "/assets/greyFloor.jpg"/>
+
+        <img id = "Rain" src= "/assets/rain.jpg"/>
+        <img id = "Desert" src= "/assets/Desert.jpg"/>
+        <img id = "Wind" src= "/assets/Wind.jpg"/>
+
+        <!-- fire selection -->
+        <img id = "fireSelection" src= "/assets/fireSelection.jpg"/>
+        <audio id="fireSelectionSound" src="assets/fireSelectionSound.mp3"></audio>
+
+        <!-- water selection -->
+        <img src="" alt="">
+        <audio src=""></audio>
+
+      </a-assets>
+
+      <!-- Back button -->
+      <a-box id="backButton" position="-1.895 3.635 -2.867" scale="1.250 0.400 0.050" rotation="0 0 0" color="green" link="href: index.html;"></a-box>
+
+      <!-- Text back button -->
+      <a-entity id="selectionRoomButton" geometry="primitive: plane; width: 3.5; height: auto"material= "opacity: 0" text="value: BACK  \n\n ;align: center" position="-1.947 3.507 -2.830" scale="1.5 1.5 1.5" rotation="0 0 0"></a-entity>
+
+      <!-- reset button -->
+      <a-box id="selectionRoomButton" position="0.035 1.841 -3.355" scale="1.250 0.400 0.050" rotation="0 0 0" color="green" link="href: index.html.html;"></a-box>
+
+      <!-- Text reset button -->
+      <a-entity id="selectionRoomButton" geometry="primitive: plane; width: 3.5; height: auto"material= "opacity: 0" text="value: RESET \n\n ;align: center" position="0.033 1.731 -3.270" scale="1.5 1.5 1.5" rotation="0 0 0"></a-entity>
+
+      <a-entity id = "selectionRoom">
+
+      <!--- Room --> 
+      <a-box id="wall_one" position="0 2.5 4" rotation="0 0 0"  width= "10" height= "5" src="#greyFloor" material= "repeat: 1 1"></a-box>
+      <a-box id="wall_two" position="0 2.5 -4" rotation="0 0 0"  width= "10" height= "5" src="#greyFloor" material= "repeat: 1 1"></a-box>
+      <a-box id="wall_three" position="4 2.5 0" rotation="0 90 0"  width= "10" height= "5" src="#greyFloor" material= "repeat: 1 1"></a-box>
+      <a-box id="wall_four" position="-4 2.5 0" rotation="0 90 0" width= "10" height= "5" src="#greyFloor" material= "repeat: 1 1"></a-box>
+      
+      <!-- Floor -->
+      <a-plane id="floor" position="0 0 0" rotation="-90 0 0" width="10" height="10" color="white" src="#greyFloor" material= "repeat: 1 1"></a-plane>
+
+      <!-- Ceiling -->
+      <a-box id="roof" position="0 5 0" rotation="-90 0 0" width="10" height="10" color="white"  depth="0.1"  material= "repeat: 1 1" src="#greyFloor"></a-box>
+      
+      <!-- Selections Pages--> 
+      <a-plane
+        id="fire"  
+        position="-2.116 1.812 -3.336"
+        width="3.5"
+        height="2"
+        src="#Desert"
+        color= "grey"
+        scale= ".6 .6 .6"
+        opacity= "1"
+        >
+      </a-plane>
+
+      <a-plane
+        id="water"
+        position="0.006 3.780 -3.400"
+        width="3.5"
+        height="2"
+        src="#Rain"
+        color= "grey"
+        scale= ".6 .6 .6"
+        >
+      </a-plane>
+
+      <a-plane
+        id="wind"  
+        position="2.107 1.812 -3.336"
+        width="3.5"
+        height="2"
+        src="#Wind"
+        color= "grey"
+        scale= ".6 .6 .6"
+        >
+      </a-plane>
+      
+      </a-entity>
+      
+      </a-plane>
+        
+      </a-entity>
+      
+    </a-scene>
+
+  </body>
+</html>
